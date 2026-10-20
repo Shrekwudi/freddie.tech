@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Programs</title>
+  <meta name="description" content="My university Python programs — open one and run it right in the browser.">
+  <!-- Enables input() support on GitHub Pages (see README). Must load first. -->
+  <script src="coi-serviceworker.js"></script>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233b6fd1'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='monospace'>py</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Show programs" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="brand">
+      <!-- Change these two lines to personalise the site -->
+      <h1 id="siteTitle">Freddie's Python Programs</h1>
+      <p class="tagline">Programming in Python · Anglia Ruskin University</p>
+    </div>
+    <div class="py-status" id="pyStatus" data-state="loading">
+      <span class="dot"></span><span class="label">Loading Python…</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="search">
+        <input type="search" id="search" placeholder="Search programs…" aria-label="Search programs" autocomplete="off">
+      </div>
+      <nav id="programList" class="program-list" aria-label="Programs">
+        <p class="muted pad">Loading programs…</p>
+      </nav>
+      <button class="scratch-btn" id="scratchBtn">+ Scratchpad (blank program)</button>
+    </aside>
+
+    <main class="main">
+      <section class="program-head">
+        <div>
+          <p class="crumb" id="crumb"></p>
+          <h2 id="progTitle">Choose a program</h2>
+          <p class="desc" id="progDesc">Pick a program from the list to view and run it.</p>
+        </div>
+      </section>
+
+      <div class="toolbar">
+        <button class="btn primary" id="runBtn" disabled title="Run (Ctrl/⌘ + Enter)">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>
+          Run
+        </button>
+        <button class="btn" id="stopBtn" disabled>
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5" fill="currentColor"/></svg>
+          Stop
+        </button>
+        <span class="spacer"></span>
+        <span class="edited-badge" id="editedBadge" hidden>Edited</span>
+        <button class="btn ghost" id="resetBtn" hidden title="Undo your edits and go back to the saved file">Reset</button>
+        <button class="btn ghost" id="copyBtn">Copy</button>
+        <button class="btn ghost" id="downloadBtn">Download .py</button>
+      </div>
+
+      <div class="panes">
+        <div class="editor" id="editor">
+          <div class="gutter" id="gutter" aria-hidden="true"></div>
+          <div class="code-wrap">
+            <pre class="highlight" id="highlight" aria-hidden="true"><code></code></pre>
+            <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" aria-label="Python code"></textarea>
+          </div>
+        </div>
+
+        <div class="terminal-wrap">
+          <div class="terminal-head">
+            <span>Output</span>
+            <button class="btn tiny ghost" id="clearBtn">Clear</button>
+          </div>
+          <div class="terminal" id="terminal" tabindex="0" aria-live="polite"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/editor.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

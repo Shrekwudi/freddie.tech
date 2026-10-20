@@ -1,0 +1,52 @@
+{
+  "programs": [
+    {
+      "path": "01-basics/hello_name.py",
+      "title": "Hello, name",
+      "description": "Asks for your name and age, then greets you. Shows input(), int() and f-strings.",
+      "group": "01-basics"
+    },
+    {
+      "path": "01-basics/temperature_converter.py",
+      "title": "Temperature converter",
+      "description": "Converts between Celsius and Fahrenheit using if/elif/else.",
+      "group": "01-basics"
+    },
+    {
+      "path": "02-loops/number_guess.py",
+      "title": "Number guessing game",
+      "description": "The computer picks a number from 1 to 100 and you guess it. Uses random and a while loop.",
+      "group": "02-loops"
+    },
+    {
+      "path": "02-loops/times_tables.py",
+      "title": "Times tables",
+      "description": "Prints a times table for any number using a for loop and range().",
+      "group": "02-loops"
+    },
+    {
+      "path": "03-functions/fizzbuzz.py",
+      "title": "FizzBuzz",
+      "description": "The classic exercise, written as a function that returns the word for each number.",
+      "group": "03-functions"
+    },
+    {
+      "path": "03-functions/grade_book.py",
+      "title": "Grade book",
+      "description": "Stores student marks in a dictionary and works out averages and grade bands.",
+      "group": "03-functions"
+    },
+    {
+      "path": "04-security/caesar_cipher.py",
+      "title": "Caesar cipher",
+      "description": "Encrypts or decrypts a message by shifting each letter along the alphabet.",
+      "group": "04-security"
+    },
+    {
+      "path": "04-security/password_checker.py",
+      "title": "Password strength checker",
+      "description": "Scores a password on length and the kinds of characters it uses.",
+      "group": "04-security"
+    }
+  ]
+}
